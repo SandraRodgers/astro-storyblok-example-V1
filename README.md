@@ -1,46 +1,22 @@
-# Astro Starter Kit: Minimal
+# Astro Storyblok Example
 
-```
-npm create astro@latest -- --template minimal
-```
+This example uses Astro version 1.9.2 with Storyblok. It's in SSR mode.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/minimal)
+To set this up so Netlify deploys changes to this repo, do the following:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Add a new site to Netlify. Select "Import an existing project"
+- Connect to Github and choose the repo you want to deploy
 
-## 🚀 Project Structure
+To make the publish command work in Storyblok so that the site builds, do the following:
 
-Inside of your Astro project, you'll see the following folders and files:
+- Go into Netlify, choose the site, then go to `Site Settings`
+- Go into the `Build and Deploy` Settings
+- Find the `Build Hooks` section. Create a new build hook. Name it what you want, then copy the key.
+- Go into your Storyblok space. Go to `Settings`.
+- Go into Webhooks and add the key where it says `Story published & unpublished`
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Now when you make a change in Storyblok, you can click `publish` and the change will cause the Netlify site to rebuild with that change.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To see the site in the Storyblok editor, and to see the Visual Editor working:
+- Go into Storyblok `Settings` for the project, then `Visual Editor`
+- Add the Netlify url for you site where it says `Location (default environment)`
